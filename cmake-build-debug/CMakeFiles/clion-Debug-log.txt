@@ -1,0 +1,4 @@
+/home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/ninja/linux/x64/ninja -DCMAKE_C_COMPILER=/usr/bin/gcc-10 -DCMAKE_CXX_COMPILER=/usr/bin/g++-10 -G Ninja -S /home/aint/park/staticServer -B /home/aint/park/staticServer/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/aint/park/staticServer/cmake-build-debug

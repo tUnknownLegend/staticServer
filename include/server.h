@@ -1,0 +1,6 @@
+#ifndef STATICSERVER_SERVER_H
+#define STATICSERVER_SERVER_H
+
+void run();
+
+#endif //STATICSERVER_SERVER_H

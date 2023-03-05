@@ -1,0 +1,8 @@
+# ninja log v5
+488	588	1678045318061054109	StaticServer	418270747f70eb29
+1	487	1678045317961053595	CMakeFiles/StaticServer.dir/src/server.cpp.o	63e97ee47043ac86
+0	23	1678048125142923631	build.ninja	c86ab24a90a72dd9
+0	26	1678047390556551179	CMakeFiles/StaticServer.dir/src/main.cpp.o	20fa83b6cefa92ed
+1	40	1678048317939547893	CMakeFiles/StaticServer.dir/src/main.cpp.o	9010067ce3bc1b5d
+1	450	1678048318347549214	CMakeFiles/StaticServer.dir/src/server.cpp.o	d81ec9d376cee721
+450	533	1678048318431549487	StaticServer	1d4cd0f2e7f98c77

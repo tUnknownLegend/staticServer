@@ -1,0 +1,3 @@
+/home/aint/park/staticServer/cmake-build-debug/CMakeFiles/StaticServer.dir
+/home/aint/park/staticServer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/aint/park/staticServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
