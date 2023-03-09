@@ -1,0 +1,2 @@
+root=/home/aint/park/staticServer
+port=8080

@@ -1,6 +1,6 @@
-/* For sockaddr_in */
+//#include "net.h"
+
 #include <netinet/in.h>
-/* For socket functions */
 #include <sys/socket.h>
 
 #include <event2/event.h>
@@ -8,14 +8,136 @@
 #include <event2/bufferevent.h>
 
 #include <unistd.h>
-#include <cstring>
 #include <cstdlib>
 #include <string>
+#include <sstream>
+#include <map>
 #include <iostream>
 
-#include <coroutine>
+#include <filesystem>
 
-#define MAX_LINE 16384
+#include <coroutine>
+#include <fstream>
+
+const std::string protocol = "HTTP/1.1";
+
+const std::string rootDir = "DOCUMENT_ROOT";
+const auto rootPath = std::filesystem::current_path().parent_path().append(rootDir);
+
+//const std::string rootDir = std::filesystem::current_path().
+//        string().substr(0,
+//                        (std::filesystem::current_path().string().rfind('/'))) +
+//                            "/DOCUMENT_ROOT";
+
+const std::map<std::string, std::string> extensions = {
+        {".html", "text/html"},
+        {".css",  "text/css"},
+        {".js",   "application/javascript"},
+        {".jpg",  "image/jpeg"},
+        {".jpeg", "image/jpeg"},
+        {".png",  "image/png"},
+        {".gif",  "image/gif"},
+        {".swf",  "application/x-shockwave-flash"}
+};
+
+const std::map<short, std::string> codes = {
+        {200, "OK"},
+        {403, "Forbidden"},
+        {404, "NotFound"},
+        {405, "MethodNotAllowed"}
+};
+
+std::string getContentType(const std::string &fileName) {
+    return extensions.at(fileName.substr(fileName.find(':')));
+}
+
+std::string getCodeMeaning(const short code) {
+    return codes.at(code);
+}
+
+struct plainResponse {
+    short responseCode;
+    std::filesystem::path path;
+    std::string data;
+};
+
+class Response {
+private:
+    short responseCode;
+    std::stringstream headers;
+    std::string body;
+
+public:
+    Response(const plainResponse &response) {
+        responseCode = response.responseCode;
+        body = response.data;
+        headers << "Connection: close"
+                << "Content type: " + response.path.extension().string();
+    }
+
+    std::string get() const {
+        return protocol + " " +
+               std::to_string(responseCode) + " " +
+               getCodeMeaning(responseCode) + "\n" +
+               headers.str() + "\n" +
+               body;
+    }
+};
+
+class Handler {
+private:
+    std::string method;
+    std::string requestPath;
+
+    bool checkMethod() {
+        if (method != "GET" || method != "HEAD") {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+public:
+    explicit Handler(const std::string &request) {
+        method = request.substr(0, request.find(' '));
+        requestPath = request.substr(method.length() + 1,
+                                     request.rfind(' ') - (method.length() + 1));
+        std::cout << method << "\n" << requestPath << std::endl;
+    }
+
+    ~Handler() = default;
+
+    plainResponse handle() {
+        if (!checkMethod()) {
+            return {405, {}, {}};
+        }
+        auto path = rootPath;
+        path.append(requestPath);
+
+        if (!path.has_filename()) {
+            path.replace_filename("index.html");
+        }
+
+        if (!std::filesystem::exists(path)) {
+            return {404, {}, path};
+        }
+
+        if (std::filesystem::is_directory(path) ||
+            path.string().find(rootDir) == std::string::npos) {
+            return {400, {}, path};
+        }
+
+        std::ifstream input(path.string(), std::ios::binary);
+        std::string str{std::istreambuf_iterator<char>(input),
+                        std::istreambuf_iterator<char>()
+        };
+
+        return {200, str, path};
+    }
+};
+
+const short MAX_LINE = 16384;
+const char CHUNK_SIZE = 64;
 
 char rot13_char(char c) {
     /* We don't want to use isalpha here; setting the locale would change
@@ -29,32 +151,25 @@ char rot13_char(char c) {
 }
 
 void readcb(struct bufferevent *bev, void *ctx) {
-    struct evbuffer *input = bufferevent_get_input(bev);
-    struct evbuffer *output = bufferevent_get_output(bev);
-    size_t n;
-    char *line = evbuffer_readln(input, &n, EVBUFFER_EOL_LF);
-    while (line) {
-        for (unsigned int i = 0; i < n; ++i)
-            line[i] = rot13_char(line[i]);
-        evbuffer_add(output, line, n);
-        evbuffer_add(output, "\n", 1);
-        free(line);
-        line = evbuffer_readln(input, &n, EVBUFFER_EOL_LF);
+
+    char *getRequest = new char[CHUNK_SIZE];
+    std::string request;
+
+    while (bufferevent_read(bev, getRequest, CHUNK_SIZE)) {
+        if (const auto pos = std::string(getRequest).find('\n'); pos != -1) {
+            request += std::string(getRequest).substr(0, pos);
+            break;
+        }
+        request += getRequest;
     }
 
-    if (evbuffer_get_length(input) >= MAX_LINE) {
-        /* Too long; just process what there is and go on so that the buffer
-         * doesn't grow infinitely long. */
-        std::string buf;
-        buf.resize(1024);
-        while (evbuffer_get_length(input)) {
-            size_t n = evbuffer_remove(input, &buf, buf.size());
-            for (unsigned int i = 0; i < n; ++i)
-                buf[i] = rot13_char(buf[i]);
-            evbuffer_add(output, &buf, n);
-        }
-        evbuffer_add(output, "\n", 1);
-    }
+    std::cout << std::endl << request << std::endl;
+    Handler handler(request);
+    Response response(handler.handle());
+
+    const auto strResponse = response.get();
+
+    bufferevent_write(bev, &strResponse, strResponse.length());
 }
 
 
@@ -69,13 +184,27 @@ void errorcb(struct bufferevent *bev, short error, void *ctx) {
     bufferevent_free(bev);
 }
 
-void write_end_callback(struct bufferevent *bev) {
+void writecb(struct bufferevent *bev) {
     struct evbuffer const *output = bufferevent_get_output(bev);
-    if (!evbuffer_get_length(output)) {
-        bufferevent_free(bev);
-    } else {
-        std::cout << "Error" << std::endl;
-    }
+
+
+//    if (!evbuffer_get_length(output)) {
+//        bufferevent_free(bev);
+//    } else {
+//        std::cout << "Error" << std::endl;
+//    }
+
+//    Response response(404);
+
+//    std::string resp = response.get();
+//    std::cout << "WRITE" << resp << std::endl;
+//    bufferevent_write(bev, &resp, resp.length());
+//    if (!evbuffer_get_length(output)) {
+//        bufferevent_free(bev);
+//    } else {
+//        std::cerr << "bufferevent_free // writecb" << std::endl;
+//    }
+//    bufferevent_free(bev);
 }
 
 void do_accept(evutil_socket_t listener, short event, void *arg) {
@@ -91,7 +220,7 @@ void do_accept(evutil_socket_t listener, short event, void *arg) {
         struct bufferevent *bev;
         evutil_make_socket_nonblocking(fd);
         bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
-        bufferevent_setcb(bev, readcb, nullptr, errorcb, base);
+        bufferevent_setcb(bev, readcb, reinterpret_cast<bufferevent_data_cb>(writecb), errorcb, base);
         bufferevent_setwatermark(bev, EV_READ, 0, MAX_LINE);
         bufferevent_enable(bev, EV_READ | EV_WRITE);
     }
@@ -128,11 +257,10 @@ void run() {
         return;
     }
 //    event_self_cbarg()
-    struct event *listener_event = event_new(base, listener, EV_READ | EV_PERSIST, do_accept, base);
+    struct event *listener_event = event_new(base, listener, EV_READ | EV_WRITE | EV_PERSIST, do_accept, base);
     if (!listener_event) {
         return;
     }
-
     event_add(listener_event, nullptr);
     std::cout << "server is starting";
     event_base_dispatch(base);

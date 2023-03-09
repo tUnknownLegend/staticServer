@@ -1,8 +1,7 @@
 #include <cstdio>
 #include "server.h"
 
-int
-main(int c, char **v) {
+int main() {
     setvbuf(stdout, nullptr, _IONBF, 0);
 
     run();

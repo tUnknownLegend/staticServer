@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/aint/park/staticServer/build",
+  "command": "/usr/bin/g++ -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include -I/home/aint/park/staticServer/./include/delivery -I/home/aint/park/staticServer/./src/delivery -lm -O0 -fcoroutines -g -std=gnu++2a -o CMakeFiles/StaticServer.dir/src/main.cpp.o -c /home/aint/park/staticServer/src/main.cpp",
+  "file": "/home/aint/park/staticServer/src/main.cpp"
+},
+{
+  "directory": "/home/aint/park/staticServer/build",
+  "command": "/usr/bin/g++ -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include -I/home/aint/park/staticServer/./include/delivery -I/home/aint/park/staticServer/./src/delivery -lm -O0 -fcoroutines -g -std=gnu++2a -o CMakeFiles/StaticServer.dir/src/server.cpp.o -c /home/aint/park/staticServer/src/server.cpp",
+  "file": "/home/aint/park/staticServer/src/server.cpp"
+},
+{
+  "directory": "/home/aint/park/staticServer/build",
+  "command": "/usr/bin/g++ -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include -I/home/aint/park/staticServer/./include/delivery -I/home/aint/park/staticServer/./src/delivery -lm -O0 -fcoroutines -g -std=gnu++2a -o CMakeFiles/StaticServer.dir/src/delivery/request.cpp.o -c /home/aint/park/staticServer/src/delivery/request.cpp",
+  "file": "/home/aint/park/staticServer/src/delivery/request.cpp"
+},
+{
+  "directory": "/home/aint/park/staticServer/build",
+  "command": "/usr/bin/g++ -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include -I/home/aint/park/staticServer/./include/delivery -I/home/aint/park/staticServer/./src/delivery -lm -O0 -fcoroutines -g -std=gnu++2a -o CMakeFiles/StaticServer.dir/src/delivery/response.cpp.o -c /home/aint/park/staticServer/src/delivery/response.cpp",
+  "file": "/home/aint/park/staticServer/src/delivery/response.cpp"
+},
+{
+  "directory": "/home/aint/park/staticServer/build",
+  "command": "/usr/bin/g++ -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include -I/home/aint/park/staticServer/./include/delivery -I/home/aint/park/staticServer/./src/delivery -lm -O0 -fcoroutines -g -std=gnu++2a -o CMakeFiles/StaticServer.dir/src/usecase.cpp.o -c /home/aint/park/staticServer/src/usecase.cpp",
+  "file": "/home/aint/park/staticServer/src/usecase.cpp"
+}
+]
