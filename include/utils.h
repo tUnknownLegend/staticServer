@@ -2,13 +2,22 @@
 #define STATICSERVER_UTILS_H
 
 #include <string>
+#include <filesystem>
 
 std::string getCurrentTime();
 
 std::string urlDecode(std::string SRC);
 
-const std::string rootDir = "DOCUMENT_ROOT";
-const auto rootPath = std::filesystem::current_path().parent_path().append(rootDir);
+struct configData {
+    unsigned int port;
+    unsigned int processLimit;
+    std::string rootFolder;
+    std::filesystem::path rootPath;
+};
+
+configData inputMatrix();
+
+auto const conf = inputMatrix();
 
 const size_t MAX_LINE = 16384;
 const size_t CHUNK_SIZE = 64;

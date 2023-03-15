@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <fstream>
+#include <filesystem>
+#include "utils.h"
 
 using namespace std;
 
@@ -31,4 +34,25 @@ string urlDecode(const string SRC) {
         }
     }
     return (ret);
+}
+
+configData inputMatrix() {
+    std::ifstream inFile("../conf.txt");
+    if (!inFile.is_open()) {
+        std::cerr << "error // input.txt open\n";
+        return {8080, 4, "DOCUMENT_ROOT", filesystem::current_path().parent_path().append("DOCUMENT_ROOT")};
+    }
+
+    unsigned int port = 8080;
+    inFile >> port;
+
+    unsigned int processLimit = 4;
+    inFile >> processLimit;
+
+    std::string rootFolder;
+    inFile >> rootFolder;
+
+    inFile.close();
+    return {port, processLimit, rootFolder,
+            filesystem::current_path().parent_path().append(rootFolder)};
 }

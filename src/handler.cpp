@@ -27,8 +27,8 @@ plainResponse Handler::handle() {
         return {400, {}, {}, {}};
     }
 
-    auto path = rootPath;
-    path.append(rootPath.string() + requestPath);
+    auto path = conf.rootPath;
+    path.append(conf.rootPath.string() + requestPath);
 
     if (!path.has_filename()) {
         path.replace_filename("index.html");
