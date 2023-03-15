@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-fcoroutines -O0 -lm -g -fdiagnostics-color=always"
+					"fragment" : "-fcoroutines -O3 -lm -g -fdiagnostics-color=always"
 				},
 				{
 					"fragment" : "-std=gnu++2a"
@@ -71,7 +71,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -81,7 +82,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-fcoroutines -O0 -lm -g",
+				"fragment" : "-fcoroutines -O3 -lm -g",
 				"role" : "flags"
 			},
 			{
@@ -133,7 +134,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -149,6 +151,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/server.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

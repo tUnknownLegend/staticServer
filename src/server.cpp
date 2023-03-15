@@ -1,55 +1,28 @@
-//#include "net.h"
-
 #include <netinet/in.h>
 #include <sys/socket.h>
 
 #include <event2/event.h>
 #include <event2/buffer.h>
 #include <event2/bufferevent.h>
+#include <event2/listener.h>
 
 #include <unistd.h>
-#include <cstdlib>
 #include <string>
-#include <sstream>
 #include <map>
 #include <iostream>
-
 #include <filesystem>
-
-#include <coroutine>
 #include <fstream>
+#include <csignal>
+#include <ctime>
+
+#include "utils.h"
+
 
 const std::string protocol = "HTTP/1.1";
 
 const std::string rootDir = "DOCUMENT_ROOT";
 const auto rootPath = std::filesystem::current_path().parent_path().append(rootDir);
 
-//const std::string rootDir = std::filesystem::current_path().
-//        string().substr(0,
-//                        (std::filesystem::current_path().string().rfind('/'))) +
-//                            "/DOCUMENT_ROOT";
-
-const std::map<std::string, std::string> extensions = {
-        {".html", "text/html"},
-        {".css",  "text/css"},
-        {".js",   "application/javascript"},
-        {".jpg",  "image/jpeg"},
-        {".jpeg", "image/jpeg"},
-        {".png",  "image/png"},
-        {".gif",  "image/gif"},
-        {".swf",  "application/x-shockwave-flash"}
-};
-
-const std::map<short, std::string> codes = {
-        {200, "OK"},
-        {403, "Forbidden"},
-        {404, "NotFound"},
-        {405, "MethodNotAllowed"}
-};
-
-std::string getContentType(const std::string &fileName) {
-    return extensions.at(fileName.substr(fileName.find(':')));
-}
 
 std::string getCodeMeaning(const short code) {
     return codes.at(code);
@@ -59,6 +32,7 @@ struct plainResponse {
     short responseCode;
     std::filesystem::path path;
     std::string data;
+    size_t dataLength;
 };
 
 class Response {
@@ -71,15 +45,22 @@ public:
     Response(const plainResponse &response) {
         responseCode = response.responseCode;
         body = response.data;
-        headers << "Connection: close"
-                << "Content type: " + response.path.extension().string();
+        headers << "Server: test-libevent\r\n" << "Date: " << getCurrentTime() << "Connection: Closed";
+
+        if (response.path.string().length()) {
+            headers << "\r\nContent-Type: " <<
+                    extensions.at(response.path.extension().string().length() ?
+                                  response.path.extension().string() : "text/plain");
+        }
+        headers <<
+                "\r\nContent-Length: " << response.dataLength;
     }
 
     std::string get() const {
         return protocol + " " +
                std::to_string(responseCode) + " " +
-               getCodeMeaning(responseCode) + "\n" +
-               headers.str() + "\n" +
+               getCodeMeaning(responseCode) + "\r\n" +
+               headers.str() + "\r\n\r\n" +
                body;
     }
 };
@@ -90,10 +71,10 @@ private:
     std::string requestPath;
 
     bool checkMethod() {
-        if (method != "GET" || method != "HEAD") {
-            return false;
-        } else {
+        if (method == "GET" || method == "HEAD") {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -102,56 +83,60 @@ public:
         method = request.substr(0, request.find(' '));
         requestPath = request.substr(method.length() + 1,
                                      request.rfind(' ') - (method.length() + 1));
-        std::cout << method << "\n" << requestPath << std::endl;
     }
 
     ~Handler() = default;
 
     plainResponse handle() {
         if (!checkMethod()) {
-            return {405, {}, {}};
+            return {405, {}, {}, {}};
         }
+
+        if (requestPath.find("/../") != std::string::npos) {
+            return {400, {}, {}, {}};
+        }
+
         auto path = rootPath;
-        path.append(requestPath);
+        path.append(rootPath.string() + requestPath);
 
         if (!path.has_filename()) {
             path.replace_filename("index.html");
         }
 
         if (!std::filesystem::exists(path)) {
-            return {404, {}, path};
+            path.assign(urlDecode(path.string()));
+
+            path.assign(path.string().substr(0, path.string().find('?')));
+            path.assign(path.string().substr(0, path.string().find('#')));
+
+            if (!std::filesystem::exists(path)) {
+                if (requestPath.find('.') != std::string::npos) {
+                    return {404, {}, {}, {}};
+                } else {
+                    return {403, {}, {}, {}};
+                }
+            }
         }
 
-        if (std::filesystem::is_directory(path) ||
-            path.string().find(rootDir) == std::string::npos) {
-            return {400, {}, path};
+        if (std::filesystem::is_directory(path)) {
+            return {403, {}, {}, {}};
         }
 
         std::ifstream input(path.string(), std::ios::binary);
-        std::string str{std::istreambuf_iterator<char>(input),
-                        std::istreambuf_iterator<char>()
-        };
+        std::string str = {std::istreambuf_iterator<char>(input), {}};
 
-        return {200, str, path};
+        if (method == "HEAD") {
+            return {200, {}, {}, str.length()};
+        }
+
+        return {200, path, str, str.length()};
     }
 };
 
 const short MAX_LINE = 16384;
 const char CHUNK_SIZE = 64;
 
-char rot13_char(char c) {
-    /* We don't want to use isalpha here; setting the locale would change
-     * which characters are considered alphabetical. */
-    if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
-        return c + 13;
-    else if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))
-        return c - 13;
-    else
-        return c;
-}
-
-void readcb(struct bufferevent *bev, void *ctx) {
-
+std::string read(struct bufferevent *bev) {
     char *getRequest = new char[CHUNK_SIZE];
     std::string request;
 
@@ -162,14 +147,17 @@ void readcb(struct bufferevent *bev, void *ctx) {
         }
         request += getRequest;
     }
+    delete[] getRequest;
+    return request;
+}
 
-    std::cout << std::endl << request << std::endl;
-    Handler handler(request);
+void readcb(struct bufferevent *bev, void *ctx) {
+    Handler handler(read(bev));
     Response response(handler.handle());
 
     const auto strResponse = response.get();
 
-    bufferevent_write(bev, &strResponse, strResponse.length());
+    bufferevent_write(bev, strResponse.c_str(), strResponse.length());
 }
 
 
@@ -184,88 +172,90 @@ void errorcb(struct bufferevent *bev, short error, void *ctx) {
     bufferevent_free(bev);
 }
 
-void writecb(struct bufferevent *bev) {
+void writecb(struct bufferevent *bev, void *user_data) {
     struct evbuffer const *output = bufferevent_get_output(bev);
-
-
-//    if (!evbuffer_get_length(output)) {
-//        bufferevent_free(bev);
-//    } else {
-//        std::cout << "Error" << std::endl;
-//    }
-
-//    Response response(404);
-
-//    std::string resp = response.get();
-//    std::cout << "WRITE" << resp << std::endl;
-//    bufferevent_write(bev, &resp, resp.length());
-//    if (!evbuffer_get_length(output)) {
-//        bufferevent_free(bev);
-//    } else {
-//        std::cerr << "bufferevent_free // writecb" << std::endl;
-//    }
-//    bufferevent_free(bev);
+    if (!evbuffer_get_length(output)) {
+        bufferevent_free(bev);
+    } else {
+        std::cerr << "Error bufferevent_free; " << std::endl;
+    }
 }
 
-void do_accept(evutil_socket_t listener, short event, void *arg) {
+void
+do_accept(struct evconnlistener *listener, evutil_socket_t fd, struct sockaddr *sa, int sockLength, void *arg) {
     auto *base = static_cast<event_base *>(arg);
-    struct sockaddr_storage ss{};
-    socklen_t socketLength = sizeof(ss);
-    int fd = accept(listener, (struct sockaddr *) &ss, &socketLength);
+
     if (fd < 0) {
-        std::cerr << "accept";
+        std::cerr << "accept; ";
     } else if (fd > FD_SETSIZE) {
         close(fd);
     } else {
-        struct bufferevent *bev;
         evutil_make_socket_nonblocking(fd);
-        bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
-        bufferevent_setcb(bev, readcb, reinterpret_cast<bufferevent_data_cb>(writecb), errorcb, base);
-        bufferevent_setwatermark(bev, EV_READ, 0, MAX_LINE);
-        bufferevent_enable(bev, EV_READ | EV_WRITE);
+        struct bufferevent *bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
+        if (bev) {
+            bufferevent_setcb(bev, readcb, writecb, errorcb, base);
+            bufferevent_setwatermark(bev, EV_READ, 0, MAX_LINE);
+            bufferevent_enable(bev, EV_READ);
+        } else {
+            std::cerr << "do_accept+bev; ";
+            event_base_loopbreak(base);
+            return;
+        }
     }
 }
 
+void SignalCallback(evutil_socket_t sig, short events, void *user_data) {
+    auto *callbackBase = static_cast<event_base *>(user_data);
+    struct timeval delay = {4, 4};
+    std::cerr << "Caught an interrupt signal; exiting cleanly in two seconds; \n";
+    event_base_loopexit(callbackBase, &delay);
+}
+
 void run() {
+    for (int i = 1; i < 4; i++) {
+        pid_t pid = fork();
+        if (pid == 0) {
+            break;
+        } else if (pid < 0) {
+            std::cerr << "fork error; \n";
+            return;
+        }
+    }
+
+    struct event_base *base = event_base_new();
+    if (!base) {
+        std::cerr << "base; ";
+        return;
+    }
+
+    struct event *listener_event = event_new(base, SIGINT, EV_SIGNAL | EV_PERSIST, SignalCallback,
+                                             base);
+    if (!listener_event) {
+        std::cerr << "event_new; ";
+        return;
+    }
+
     struct sockaddr_in sin{};
     sin.sin_family = AF_INET;
     sin.sin_addr.s_addr = 0;
-    sin.sin_port = htons(8080);
+    sin.sin_port = htons(9080);
 
-    evutil_socket_t listener = socket(AF_INET, SOCK_STREAM, 0);
-    evutil_make_socket_nonblocking(listener);
+    struct evconnlistener *listener = evconnlistener_new_bind(base, do_accept, (void *) base,
+                                                              LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE |
+                                                              LEV_OPT_REUSEABLE_PORT, -1,
+                                                              (struct sockaddr *) &sin,
+                                                              sizeof(sin));
 
-#ifndef WIN32
-    {
-        int one = 1;
-        setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(one));
-    }
-#endif
-
-    if (bind(listener, (struct sockaddr *) &sin, sizeof(sin)) < 0) {
-        std::cerr << "bind";
+    if (!listener) {
+        std::cerr << "listener; ";
         return;
     }
-
-    if (listen(listener, 16) < 0) {
-        std::cerr << "listen";
-        return;
-    }
-    struct event_base *base = event_base_new();
-    if (!base) {
-        std::cerr << "base";
-        return;
-    }
-//    event_self_cbarg()
-    struct event *listener_event = event_new(base, listener, EV_READ | EV_WRITE | EV_PERSIST, do_accept, base);
-    if (!listener_event) {
-        return;
-    }
-    event_add(listener_event, nullptr);
-    std::cout << "server is starting";
+    event_reinit(base);
+    std::cout << "up; ";
     event_base_dispatch(base);
 
-    std::cout << "server is stopping";
+    std::cout << "down; ";
+    evconnlistener_free(listener);
     event_free(listener_event);
     event_base_free(base);
 //    libevent_global_shutdown();

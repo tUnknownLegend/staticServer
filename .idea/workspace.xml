@@ -21,31 +21,223 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2cf513f-1b07-43ea-8154-a5b818052f2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/conf.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/delivery/contentType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/delivery/request.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/delivery/response.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/delivery/responseCodes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/net.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/usecase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/delivery/request.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/delivery/response.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/usecase.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DOCUMENT_ROOT/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-f8e57308c5c5c75a4f40.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-bb1bc626a2f2a90c41d1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-05T20-28-45-0165.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-StaticServer-Debug-b4f12d4e2593b60d4c69.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/160313.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/b16261023.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/dir1/dir12/dir123/deep.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/dir2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/dir2/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/ef35c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/jquery-1.9.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/logo.v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/pic_ask.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/space in name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/splash.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/text..txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Alexander_Newski.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Asia_orthographic_projection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Cathedral_Square.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Europe_orthographic_projection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Katun.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Kishi_church_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Klyuchevskoi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Olchon_Shaman_Rock.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Petersburg-square.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-Russian-Matroshka_no_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/100px-TenorBalalaika1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/11px-Increase2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/11px-Speakerlink-new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/120px-Carte_du_Conseil_de_lEurope.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/120px-Kremlin_27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/120px-PalaceSquare.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/120px-Yekaterinburg_skyline2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/120px-___.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/125px-Flag_of_Russia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/13px-Speaker_Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/16px-Gnome-globe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/16px-Openstreetmap_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-2010_Moscow_Victory_Day_Parade-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Andrej_Rublv_001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Convert_ru_kosmos077.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Ivan_the_Terrible_cropped.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-L.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Lomonosovportrait.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Medved_mzoo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-MininPogjarsky_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Peter_der-Grosse_1838_PR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-RedSquare_SaintBasile_pixinn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Shukhov_tower_shabolovka_moscow_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Snowdance.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-Soyuz_TMA-2_launch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/170px-TransSiberianRailwayAtKm9288.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/17px-Boxed_East_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/17px-North.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/17px-South.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/17px-WMA_button2b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/17px-West.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/18px-Commons-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/20px-Padlock-silver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/21px-Wikiquote-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Alyye_parusa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Archangelsk_taiga.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-BRIC_leaders_in_2008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Countries-SCO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Dmitry_Medvedev_20_May_2008-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Elbrus_North_195.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-IE_expansion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Kazan_church_edit1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Kievan_Rus_en.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Kustodiev_Merchants_Wife.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Lebedev_baptism.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Lenintribune.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Medvedev_-_Russia_Today_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Mir_on_12_June_1998edit1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Moscow_City_May_2010_03.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Moscow_Kremlin_from_Kamenny_bridge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-NSF_picture_of_Yamal.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-PeterhofGrandCascade.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-RF_NG_pipestoEU.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-RIAN_archive_93172_Defenders_of_Leningrad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Rozh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Russia-2000-stamp-Tatlin_Tower_and_Worker_and_Kolkhoz_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Russian-Matroshka2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-RussianBear.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-RussianLanguageMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Russian_Empire_orthographic_projection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Russian_Federation_orthographic_projection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Sukhoi_T-50_Beltyukov.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Terapevt_Mudrov_train.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Victory_Day_Parade_2005-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-WTC-Moscow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-Yo-conc3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/220px-_1118_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Abkhazia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Albania.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Argentina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Armenia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Australia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Azerbaijan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Belarus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Bosnia_and_Herzegovina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Brazil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Brunei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Bulgaria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Cambodia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Canada.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Chile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Croatia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Denmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Estonia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Europe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Finland.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_France.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Georgia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Germany.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Greece.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Hong_Kong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_India.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Indonesia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Iran.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Italy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Japan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Kazakhstan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Laos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Latvia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Lithuania.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Macedonia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Malaysia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Mexico.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Moldova.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Mongolia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Montenegro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Myanmar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_New_Zealand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_North_Korea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Norway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Papua_New_Guinea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Peru.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Poland.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Romania.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Russia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Saudi_Arabia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Serbia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Singapore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Slovakia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Slovenia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_South_Africa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_South_Korea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Sweden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Thailand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Transnistria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Turkey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Turkmenistan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Ukraine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_Vietnam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_Czech_Republic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_Peoples_Republic_of_China.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_Philippines.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_Republic_of_China.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_United_Kingdom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/22px-Flag_of_the_United_States.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/23px-Wiktionary-logo-en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/24px-Wikisource-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/25px-Gnome-globe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/25px-Wikibooks-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/25px-Wikinews-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/25px-Wikiversity-logo-en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/25px-Wikivoyage-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/270px-Lissner_TroiceSergievaLavr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/280px-Russland_Relief.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/300px-Percentage_of_Russians_by_region.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/300px-Russia_natural_population_growth_rates_2012.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/30px-EurasecMap_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/30px-Office-book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/32px-Flag_of_Russia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/350px-Russian_economy_since_fall_of_Soviet_Union.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/37px-Wiktionary-logo-en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/600px-Russian_Regions-EN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/64px-Flag_of_the_CIS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/80px-Grayushanka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/80px-Samovar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/85px-Coat_of_Arms_of_the_Russian_Federation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/Compass_rose_pale-50x50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/geoiplookup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/index_002.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_002.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_002.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_003.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_004.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_005.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_006.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_007.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_008.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/load_009.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/magnify-clip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/poweredby_mediawiki_88x31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/search-ltr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/wikimedia-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b64bed233a26c49a30b3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c0fdd43c23e26f4fb32b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-07T13-42-25-0167.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-StaticServer-Debug-40734032449bfd3594c4.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/StaticServer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/StaticServer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curl.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +249,13 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -73,23 +272,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CPPToolchains",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DOCUMENT_ROOT" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.StaticServer">
     <configuration name="&quot;StaticServer&quot;" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
@@ -100,6 +305,11 @@
       </method>
     </configuration>
     <configuration name="Unnamed" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
