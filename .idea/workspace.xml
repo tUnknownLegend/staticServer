@@ -21,11 +21,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2cf513f-1b07-43ea-8154-a5b818052f2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DOCUMENT_ROOT/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/handler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest.py" beforeDir="false" />
@@ -228,17 +224,25 @@
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/poweredby_mediawiki_88x31.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/search-ltr.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/wikimedia-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b64bed233a26c49a30b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c0fdd43c23e26f4fb32b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-07T13-42-25-0167.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-StaticServer-Debug-40734032449bfd3594c4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-f4bd50717c72d7634b84.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-15T03-13-04-0948.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-StaticServer-Debug-6bb9cb0b6c7b56c2da99.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/StaticServer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/StaticServer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/delivery/contentType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/delivery/request.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/delivery/response.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/delivery/responseCodes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/net.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/net.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/delivery/request.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/delivery/response.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/net.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usecase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/handler.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

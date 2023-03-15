@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef STATICSERVER_NET_H
 #define STATICSERVER_NET_H
 
@@ -5,13 +7,34 @@
 #include <sstream>
 #include <map>
 
-const std::map<std::string, std::string> extensions;
+const std::string protocol = "HTTP/1.1";
 
-std::string getContentType(const std::string &fileName);
+const std::map<std::string, std::string> extensions = {
+        {".html", "text/html"},
+        {".css",  "text/css"},
+        {".js",   "application/javascript"},
+        {".jpg",  "image/jpeg"},
+        {".jpeg", "image/jpeg"},
+        {".png",  "image/png"},
+        {".gif",  "image/gif"},
+        {".swf",  "application/x-shockwave-flash"},
+        {".txt",  "text/plain"}
+};
 
-const std::map<short, std::string> codes;
+const std::map<short, std::string> codes = {
+        {200, "OK"},
+        {400, "Bad Request"},
+        {403, "Forbidden"},
+        {404, "Not Found"},
+        {405, "Method Not Allowed"}
+};
 
-std::string getCodeMeaning(const short code);
+struct plainResponse {
+    short responseCode;
+    std::filesystem::path path;
+    std::string data;
+    size_t dataLength;
+};
 
 class Response {
 private:
@@ -20,15 +43,9 @@ private:
     std::string body;
 
 public:
-    explicit Response(short responseCode);
-
-    Response(short responseCode, const std::string &body);
+    explicit Response(const plainResponse &response);
 
     std::string get() const;
-
-    ~Response() = default;
 };
-
-class Request;
 
 #endif //STATICSERVER_NET_H

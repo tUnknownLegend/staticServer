@@ -7,24 +7,10 @@ std::string getCurrentTime();
 
 std::string urlDecode(std::string SRC);
 
-const std::map<std::string, std::string> extensions = {
-        {".html", "text/html"},
-        {".css",  "text/css"},
-        {".js",   "application/javascript"},
-        {".jpg",  "image/jpeg"},
-        {".jpeg", "image/jpeg"},
-        {".png",  "image/png"},
-        {".gif",  "image/gif"},
-        {".swf",  "application/x-shockwave-flash"},
-        {".txt",  "text/plain"}
-};
+const std::string rootDir = "DOCUMENT_ROOT";
+const auto rootPath = std::filesystem::current_path().parent_path().append(rootDir);
 
-const std::map<short, std::string> codes = {
-        {200, "OK"},
-        {400, "Bad Request"},
-        {403, "Forbidden"},
-        {404, "Not Found"},
-        {405, "Method Not Allowed"}
-};
+const short MAX_LINE = 16384;
+const char CHUNK_SIZE = 64;
 
 #endif //STATICSERVER_UTILS_H

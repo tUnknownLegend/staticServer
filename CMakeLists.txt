@@ -5,7 +5,7 @@ project("StaticServer")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wall -Wpedantic -Wextra -Werror -lm -O0")
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fcoroutines -O3 -lm")
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-O3 -lm")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -levent")
 
 find_path(LIBEVENT_INCLUDE_DIR NAMES event.h)
@@ -32,8 +32,8 @@ mark_as_advanced(LIBEVENT_INCLUDE_DIRS LIBEVENT_LIBRARIES)
 
 include_directories(./src ./include)
 
-set(SOURCES ./src/main.cpp ./src/server.cpp src/utils.cpp)
-set(HEADERS ./include/server.h include/utils.h)
+set(SOURCES ./src/main.cpp ./src/server.cpp src/utils.cpp src/net.cpp src/handler.cpp)
+set(HEADERS ./include/server.h include/utils.h src/net.h src/handler.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} ${LIBEVENT_LIBRARIES})

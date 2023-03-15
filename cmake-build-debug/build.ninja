@@ -51,21 +51,35 @@ build cmake_object_order_depends_target_StaticServer: phony || CMakeFiles/Static
 
 build CMakeFiles/StaticServer.dir/src/main.cpp.o: CXX_COMPILER__StaticServer_Debug /home/aint/park/staticServer/src/main.cpp || cmake_object_order_depends_target_StaticServer
   DEP_FILE = CMakeFiles/StaticServer.dir/src/main.cpp.o.d
-  FLAGS = -fcoroutines -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
+  FLAGS = -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
   INCLUDES = -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include
   OBJECT_DIR = CMakeFiles/StaticServer.dir
   OBJECT_FILE_DIR = CMakeFiles/StaticServer.dir/src
 
 build CMakeFiles/StaticServer.dir/src/server.cpp.o: CXX_COMPILER__StaticServer_Debug /home/aint/park/staticServer/src/server.cpp || cmake_object_order_depends_target_StaticServer
   DEP_FILE = CMakeFiles/StaticServer.dir/src/server.cpp.o.d
-  FLAGS = -fcoroutines -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
+  FLAGS = -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
   INCLUDES = -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include
   OBJECT_DIR = CMakeFiles/StaticServer.dir
   OBJECT_FILE_DIR = CMakeFiles/StaticServer.dir/src
 
 build CMakeFiles/StaticServer.dir/src/utils.cpp.o: CXX_COMPILER__StaticServer_Debug /home/aint/park/staticServer/src/utils.cpp || cmake_object_order_depends_target_StaticServer
   DEP_FILE = CMakeFiles/StaticServer.dir/src/utils.cpp.o.d
-  FLAGS = -fcoroutines -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
+  FLAGS = -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
+  INCLUDES = -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include
+  OBJECT_DIR = CMakeFiles/StaticServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/StaticServer.dir/src
+
+build CMakeFiles/StaticServer.dir/src/net.cpp.o: CXX_COMPILER__StaticServer_Debug /home/aint/park/staticServer/src/net.cpp || cmake_object_order_depends_target_StaticServer
+  DEP_FILE = CMakeFiles/StaticServer.dir/src/net.cpp.o.d
+  FLAGS = -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
+  INCLUDES = -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include
+  OBJECT_DIR = CMakeFiles/StaticServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/StaticServer.dir/src
+
+build CMakeFiles/StaticServer.dir/src/handler.cpp.o: CXX_COMPILER__StaticServer_Debug /home/aint/park/staticServer/src/handler.cpp || cmake_object_order_depends_target_StaticServer
+  DEP_FILE = CMakeFiles/StaticServer.dir/src/handler.cpp.o.d
+  FLAGS = -O3 -lm -g -fdiagnostics-color=always -std=gnu++2a
   INCLUDES = -I/home/aint/park/staticServer/./src -I/home/aint/park/staticServer/./include
   OBJECT_DIR = CMakeFiles/StaticServer.dir
   OBJECT_FILE_DIR = CMakeFiles/StaticServer.dir/src
@@ -78,8 +92,8 @@ build CMakeFiles/StaticServer.dir/src/utils.cpp.o: CXX_COMPILER__StaticServer_De
 #############################################
 # Link the executable StaticServer
 
-build StaticServer: CXX_EXECUTABLE_LINKER__StaticServer_Debug CMakeFiles/StaticServer.dir/src/main.cpp.o CMakeFiles/StaticServer.dir/src/server.cpp.o CMakeFiles/StaticServer.dir/src/utils.cpp.o | /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_openssl.so /usr/lib/x86_64-linux-gnu/libevent_core.so /usr/lib/x86_64-linux-gnu/libevent_extra.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libevent_extra.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so
-  FLAGS = -fcoroutines -O3 -lm -g
+build StaticServer: CXX_EXECUTABLE_LINKER__StaticServer_Debug CMakeFiles/StaticServer.dir/src/main.cpp.o CMakeFiles/StaticServer.dir/src/server.cpp.o CMakeFiles/StaticServer.dir/src/utils.cpp.o CMakeFiles/StaticServer.dir/src/net.cpp.o CMakeFiles/StaticServer.dir/src/handler.cpp.o | /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_openssl.so /usr/lib/x86_64-linux-gnu/libevent_core.so /usr/lib/x86_64-linux-gnu/libevent_extra.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libevent_extra.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so
+  FLAGS = -O3 -lm -g
   LINK_FLAGS = -levent   -rdynamic
   LINK_LIBRARIES = -levent  -levent_openssl  -levent_core  -levent_extra  -levent_pthreads  -levent_extra  -levent_pthreads
   OBJECT_DIR = CMakeFiles/StaticServer.dir
