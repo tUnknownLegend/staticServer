@@ -5,10 +5,10 @@ docker-build-nginx:
 	sudo docker build -t nginx ./nginx
 
 docker-run-nginx:
-	sudo docker run --rm -d -p 8081:8081 --name nginx -t nginx
+	sudo docker run --rm --network host -d -p 8081:8081 --name nginx -t nginx
 
 docker-run:
-	sudo docker run --rm -d -p 8080:8080 --name server -t myserver
+	sudo docker run --rm --network host -d -p 8080:8080 --name server -t myserver
 
 docker-fix:
 	- sudo killall containerd-shim
