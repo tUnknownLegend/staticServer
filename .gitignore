@@ -35,3 +35,5 @@ DOCUMENT_ROOT
 .idea
 cmake-build-debug
 build
+vegeta
+*.bin

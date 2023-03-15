@@ -94,7 +94,7 @@ void eventCallback(evutil_socket_t sig, short events, void *user_data) {
 }
 
 void runServer() {
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < conf.processLimit; i++) {
         pid_t pid = fork();
         if (pid == 0) {
             break;
@@ -121,7 +121,7 @@ void runServer() {
     struct sockaddr_in sin{};
     sin.sin_family = AF_INET;
     sin.sin_addr.s_addr = 0;
-    sin.sin_port = htons(9080);
+    sin.sin_port = htons(conf.port);
 
     struct evconnlistener *listener =
             evconnlistener_new_bind(base, do_accept, (void *) base,
