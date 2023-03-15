@@ -4,7 +4,6 @@
 #include "handler.h"
 #include "utils.h"
 
-
 bool Handler::checkMethod() {
     if (method == "GET" || method == "HEAD") {
         return true;
@@ -12,7 +11,6 @@ bool Handler::checkMethod() {
         return false;
     }
 }
-
 
 Handler::Handler(const std::string &request) {
     method = request.substr(0, request.find(' '));

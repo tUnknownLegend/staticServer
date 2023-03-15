@@ -63,8 +63,8 @@ void writecb(struct bufferevent *bev, void *user_data) {
     }
 }
 
-void
-do_accept(struct evconnlistener *listener, evutil_socket_t fd, struct sockaddr *sa, int sockLength, void *arg) {
+void do_accept(struct evconnlistener *listener, evutil_socket_t fd,
+                       struct sockaddr *sa, int sockLength, void *arg) {
     auto *base = static_cast<event_base *>(arg);
 
     if (fd < 0) {
@@ -86,14 +86,14 @@ do_accept(struct evconnlistener *listener, evutil_socket_t fd, struct sockaddr *
     }
 }
 
-void SignalCallback(evutil_socket_t sig, short events, void *user_data) {
+void eventCallback(evutil_socket_t sig, short events, void *user_data) {
     auto *callbackBase = static_cast<event_base *>(user_data);
-    struct timeval delay = {4, 4};
+    struct timeval delay = {1, 0};
     std::cerr << "Caught an interrupt signal; exiting cleanly in two seconds; \n";
     event_base_loopexit(callbackBase, &delay);
 }
 
-void run() {
+void runServer() {
     for (int i = 1; i < 4; i++) {
         pid_t pid = fork();
         if (pid == 0) {
@@ -110,7 +110,8 @@ void run() {
         return;
     }
 
-    struct event *listener_event = event_new(base, SIGINT, EV_SIGNAL | EV_PERSIST, SignalCallback,
+    struct event *listener_event = event_new(base,
+                                             SIGINT, EV_SIGNAL | EV_PERSIST, eventCallback,
                                              base);
     if (!listener_event) {
         std::cerr << "event_new; ";
@@ -122,11 +123,12 @@ void run() {
     sin.sin_addr.s_addr = 0;
     sin.sin_port = htons(9080);
 
-    struct evconnlistener *listener = evconnlistener_new_bind(base, do_accept, (void *) base,
-                                                              LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE |
-                                                              LEV_OPT_REUSEABLE_PORT, -1,
-                                                              (struct sockaddr *) &sin,
-                                                              sizeof(sin));
+    struct evconnlistener *listener =
+            evconnlistener_new_bind(base, do_accept, (void *) base,
+                                    LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE |
+                                    LEV_OPT_REUSEABLE_PORT, -1,
+                                    (struct sockaddr *) &sin,
+                                    sizeof(sin));
 
     if (!listener) {
         std::cerr << "listener; ";

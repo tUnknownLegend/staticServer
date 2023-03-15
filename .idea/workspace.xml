@@ -21,9 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2cf513f-1b07-43ea-8154-a5b818052f2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/include/handler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/160313.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/b16261023.swf" beforeDir="false" />
@@ -224,25 +224,18 @@
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/poweredby_mediawiki_88x31.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/search-ltr.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DOCUMENT_ROOT/http-test-suite/httptest/wikipedia_russia_files/wikimedia-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-f4bd50717c72d7634b84.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-15T03-13-04-0948.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-StaticServer-Debug-6bb9cb0b6c7b56c2da99.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-473eb4f6a3d0802db5b6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-e52726fa22d47900a600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-15T03-38-59-0429.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/StaticServer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/StaticServer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/delivery/contentType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/delivery/request.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/delivery/response.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/delivery/responseCodes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/net.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/net.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/delivery/request.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/delivery/response.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/net.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/server.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/server.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/handler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usecase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/handler.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,30 +269,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CPPToolchains",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DOCUMENT_ROOT" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.StaticServer">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="&quot;StaticServer&quot;" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -309,11 +307,6 @@
       </method>
     </configuration>
     <configuration name="Unnamed" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -343,6 +336,10 @@
       <workItem from="1678358920655" duration="696000" />
       <workItem from="1678365951702" duration="2342000" />
       <workItem from="1678398337812" duration="6211000" />
+      <workItem from="1678852095994" duration="84000" />
+      <workItem from="1678852189708" duration="9000" />
+      <workItem from="1678852200966" duration="35000" />
+      <workItem from="1678852244533" duration="353000" />
     </task>
     <servers />
   </component>

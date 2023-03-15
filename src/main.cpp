@@ -4,6 +4,6 @@
 int main() {
     setvbuf(stdout, nullptr, _IONBF, 0);
 
-    run();
+    runServer();
     return 0;
 }
