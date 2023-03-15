@@ -1,4 +1,4 @@
-FROM ubuntu:latest AS myserver
+FROM ubuntu:20.04 AS myserver
 
 RUN apt-get -y update && apt-get -y install g++ make cmake libevent-dev
 
@@ -10,4 +10,4 @@ RUN rm -r build && mkdir -p build && cd build && cmake .. && make
 
 EXPOSE 8080
 
-ENTRYPOINT [ "./build/StaticServer" ]
+#ENTRYPOINT [ "./build/StaticServer" ]

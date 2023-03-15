@@ -29,5 +29,5 @@ run-vegeta-myserver:
 	echo "GET http://127.0.0.1:8080/" | vegeta attack -duration=10s -rate=0 -max-workers=1000 | tee results.bin | vegeta report
 
 run-vegeta-nginx:
-	echo "GET http://127.0.0.1:8081/" | vegeta attack -duration=10s -rate=10000 -max-workers=100 | tee results.bin | vegeta report
+	echo "GET http://127.0.0.1:8081/" | vegeta attack -duration=10s -rate=0 -max-workers=1000 | tee results.bin | vegeta report
 
