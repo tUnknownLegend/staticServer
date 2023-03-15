@@ -10,4 +10,6 @@ RUN rm -r build && mkdir -p build && cd build && cmake .. && make
 
 EXPOSE 8080
 
-#ENTRYPOINT [ "./build/StaticServer" ]
+WORKDIR build
+
+CMD [ "./StaticServer" ]
