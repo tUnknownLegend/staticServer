@@ -10,7 +10,6 @@
 #include <string>
 #include <map>
 #include <iostream>
-#include <filesystem>
 #include <csignal>
 #include <ctime>
 
@@ -19,7 +18,7 @@
 #include "handler.h"
 
 std::string read(struct bufferevent *bev) {
-    char *getRequest = new char[CHUNK_SIZE];
+    auto *getRequest = new char[CHUNK_SIZE];
     std::string request;
 
     while (bufferevent_read(bev, getRequest, CHUNK_SIZE)) {
@@ -63,7 +62,7 @@ void writecb(struct bufferevent *bev, void *user_data) {
     }
 }
 
-void do_accept(struct evconnlistener *listener, evutil_socket_t fd,
+void doaccept(struct evconnlistener *listener, evutil_socket_t fd,
                        struct sockaddr *sa, int sockLength, void *arg) {
     auto *base = static_cast<event_base *>(arg);
 
@@ -124,7 +123,7 @@ void runServer() {
     sin.sin_port = htons(conf.port);
 
     struct evconnlistener *listener =
-            evconnlistener_new_bind(base, do_accept, (void *) base,
+            evconnlistener_new_bind(base, doaccept, (void *) base,
                                     LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE |
                                     LEV_OPT_REUSEABLE_PORT, -1,
                                     (struct sockaddr *) &sin,

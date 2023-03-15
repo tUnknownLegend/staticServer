@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <map>
+#include <filesystem>
 
 const std::string protocol = "HTTP/1.1";
 

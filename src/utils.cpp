@@ -10,7 +10,7 @@ using namespace std;
 string getCurrentTime() {
     time_t now = time(nullptr);
 
-    tm *gmtm = gmtime(&now);
+    tm const *gmtm = gmtime(&now);
     if (gmtm != nullptr) {
         return asctime(gmtm);
     } else {
@@ -21,12 +21,11 @@ string getCurrentTime() {
 
 string urlDecode(const string SRC) {
     string ret;
-    char ch;
-    int i, ii;
-    for (i = 0; i < SRC.length(); i++) {
+    for (int i = 0; i < SRC.length(); i++) {
         if (SRC[i] == '%') {
-            sscanf(SRC.substr(i + 1, 2).c_str(), "%x", &ii);
-            ch = static_cast<char>(ii);
+            int j;
+            sscanf(SRC.substr(i + 1, 2).c_str(), "%x", &j);
+            auto ch = static_cast<char>(j);
             ret += ch;
             i = i + 2;
         } else {
