@@ -141,5 +141,4 @@ void runServer() {
     evconnlistener_free(listener);
     event_free(listener_event);
     event_base_free(base);
-//    libevent_global_shutdown();
 }
