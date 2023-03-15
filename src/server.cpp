@@ -59,7 +59,7 @@ void writecb(struct bufferevent *bev, void *user_data) {
     if (!evbuffer_get_length(output)) {
         bufferevent_free(bev);
     } else {
-        std::cerr << "Error bufferevent_free; " << std::endl;
+        std::cerr << "Error bufferevent_free; \n";
     }
 }
 
@@ -76,7 +76,7 @@ void do_accept(struct evconnlistener *listener, evutil_socket_t fd,
         struct bufferevent *bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
         if (bev) {
             bufferevent_setcb(bev, readcb, writecb, errorcb, base);
-            bufferevent_setwatermark(bev, EV_READ, 0, MAX_LINE);
+            bufferevent_setwatermark(bev, EV_READ, 10, MAX_LINE);
             bufferevent_enable(bev, EV_READ);
         } else {
             std::cerr << "do_accept+bev; ";
@@ -89,7 +89,7 @@ void do_accept(struct evconnlistener *listener, evutil_socket_t fd,
 void eventCallback(evutil_socket_t sig, short events, void *user_data) {
     auto *callbackBase = static_cast<event_base *>(user_data);
     struct timeval delay = {1, 0};
-    std::cerr << "Caught an interrupt signal; exiting cleanly in two seconds; \n";
+    std::cerr << "exiting; \n";
     event_base_loopexit(callbackBase, &delay);
 }
 
